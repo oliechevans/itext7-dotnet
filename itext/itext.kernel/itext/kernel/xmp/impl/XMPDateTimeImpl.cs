@@ -55,7 +55,7 @@ namespace iText.Kernel.XMP.Impl
 		private int second = 0;
 
 		/// <summary>Use NO time zone as default</summary>
-		private TimeZone timeZone = null;
+		private TimeZoneInfo timeZone = null;
 
 		/// <summary>The nano seconds take micro and nano seconds, while the milli seconds are in the calendar.
 		/// 	</summary>
@@ -82,7 +82,7 @@ namespace iText.Kernel.XMP.Impl
 		public XMPDateTimeImpl(XMPCalendar calendar) {
 			// extract the date and timezone from the calendar provided
 			DateTime date = calendar.GetDateTime();
-			TimeZone zone = calendar.GetTimeZone();
+			TimeZoneInfo zone = calendar.GetTimeZone();
 
 			year = date.Year;
 			month = date.Month + 1; // cal is from 0..12
@@ -103,7 +103,7 @@ namespace iText.Kernel.XMP.Impl
 		/// </summary>
 		/// <param name="date"> a date describing an absolute point in time </param>
 		/// <param name="timeZone"> a TimeZone how to interpret the date </param>
-		public XMPDateTimeImpl(DateTime date, TimeZone timeZone) {
+		public XMPDateTimeImpl(DateTime date, TimeZoneInfo timeZone) {
 			year = date.Year;
 			month = date.Month + 1; // cal is from 0..12
 			day = date.Day;
@@ -258,14 +258,14 @@ namespace iText.Kernel.XMP.Impl
 		}
 
 		/// <seealso cref="iText.Kernel.XMP.XMPDateTime.GetTimeZone()"/>
-		public virtual TimeZone GetTimeZone()
+		public virtual TimeZoneInfo GetTimeZone()
 		{
 			return timeZone;
 		}
 
 		/// <seealso cref="iText.Kernel.XMP.XMPDateTime.SetTimeZone(Java.Util.TimeZone)"
 		/// 	/>
-		public virtual void SetTimeZone(TimeZone timeZone)
+		public virtual void SetTimeZone(TimeZoneInfo timeZone)
 		{
 			this.timeZone = timeZone;
 			this.hasTime = true;
@@ -293,13 +293,13 @@ namespace iText.Kernel.XMP.Impl
 		/// <seealso cref="iText.Kernel.XMP.XMPDateTime.GetCalendar()"/>
 		public virtual XMPCalendar GetCalendar()
 		{
-			TimeZone tz;
+			TimeZoneInfo tz;
 			if (hasTimeZone) {
 				tz = timeZone;
 			} else {
-				tz = TimeZone.CurrentTimeZone;
+				tz = TimeZoneInfo.Local;
 			}
-			return new XMPCalendar(new DateTime(year, month - 1, day, hour, minute, second, nanoSeconds / 1000000), tz);
+			return new XMPCalendar(new DateTime(year, month - 1, day, hour, minute, second, nanoSeconds / 1000000, DateTimeKind.Local));
 		}
 
 	    /// <seealso cref="iText.Kernel.XMP.XMPDateTime.GetISO8601String()"/>

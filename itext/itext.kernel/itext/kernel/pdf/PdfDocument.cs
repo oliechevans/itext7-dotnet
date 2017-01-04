@@ -751,7 +751,7 @@ namespace iText.Kernel.Pdf {
             finally {
                 if (writer != null && IsCloseWriter()) {
                     try {
-                        writer.Close();
+                        writer.Dispose();
                     }
                     catch (Exception e) {
                         ILogger logger = LoggerFactory.GetLogger(typeof(iText.Kernel.Pdf.PdfDocument));

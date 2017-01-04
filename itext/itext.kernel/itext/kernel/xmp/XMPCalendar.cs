@@ -47,21 +47,21 @@ namespace iText.Kernel.XMP {
 	
     public class XMPCalendar {
         private DateTime dateTime;
-        private TimeZone timeZone;
+        private TimeZoneInfo timeZone;
 
-        public XMPCalendar(DateTime dateTime, TimeZone timeZone) {
+        public XMPCalendar(DateTime dateTime, TimeZoneInfo timeZone) {
 			this.dateTime = dateTime;
             this.timeZone = timeZone;
         }
 
-        public XMPCalendar(DateTime dateTime) : this(dateTime, TimeZone.CurrentTimeZone) {
+        public XMPCalendar(DateTime dateTime) : this(dateTime, TimeZoneInfo.Local) {
         }
 
-		public XMPCalendar(TimeZone timeZone)
+		public XMPCalendar(TimeZoneInfo timeZone)
 			: this(DateTime.Now, timeZone) {
         }
 
-        public XMPCalendar() : this(DateTime.Now, TimeZone.CurrentTimeZone) {
+        public XMPCalendar() : this(DateTime.Now, TimeZoneInfo.Local) {
         }
 
 		public virtual DateTime GetDateTime() {
@@ -72,11 +72,11 @@ namespace iText.Kernel.XMP {
 			this.dateTime = dateTime;
 		}
 
-		public virtual void SetTimeZone(TimeZone timeZone) {
+		public virtual void SetTimeZone(TimeZoneInfo timeZone) {
 			this.timeZone = timeZone;
 		}
 
-		public virtual TimeZone GetTimeZone() {
+		public virtual TimeZoneInfo GetTimeZone() {
             return timeZone;
         }
 

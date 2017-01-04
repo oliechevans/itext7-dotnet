@@ -106,10 +106,10 @@ namespace iText.Kernel.XMP
 		void SetNanoSecond(int nanoSecond);
 
 		/// <returns>Returns the time zone.</returns>
-		TimeZone GetTimeZone();
+		TimeZoneInfo GetTimeZone();
 
 		/// <param name="tz">a time zone to set</param>
-		void SetTimeZone(TimeZone tz);
+		void SetTimeZone(TimeZoneInfo tz);
 
 		/// <summary>This flag is set either by parsing or by setting year, month or day.</summary>
 		/// <returns>Returns true if the XMPDateTime object has a date portion.</returns>

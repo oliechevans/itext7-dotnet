@@ -206,23 +206,27 @@ namespace iText.Kernel.Pdf {
             }
         }
 
-        /// <summary>Close the writer and underlying streams.</summary>
-        /// <exception cref="System.IO.IOException"/>
-        public override void Close() {
-            try {
-                base.Close();
+        protected override void Dispose(bool disposing) {
+            try
+            {
+                base.Dispose(disposing);
             }
-            finally {
-                try {
-                    if (duplicateStream != null) {
-                        duplicateStream.Close();
+            finally
+            {
+                try
+                {
+                    if (duplicateStream != null)
+                    {
+                        duplicateStream.Dispose();
                     }
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     ILogger logger = LoggerFactory.GetLogger(typeof(iText.Kernel.Pdf.PdfWriter));
                     logger.Error("Closing of the duplicatedStream failed.", ex);
                 }
             }
+            
         }
 
         /// <summary>Gets the current object stream.</summary>

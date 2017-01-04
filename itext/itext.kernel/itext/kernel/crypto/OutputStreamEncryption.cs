@@ -76,13 +76,13 @@ namespace iText.Kernel.Crypto
 		/// does nothing.
 		/// </remarks>
 		/// <exception cref="System.IO.IOException">if an I/O error occurs.</exception>
-		public override void Close()
-		{
-			Finish();
-			@out.Close();
-		}
+	    protected override void Dispose(bool disposing) {
+            Finish();
+            @out.Dispose();
+            base.Dispose(disposing);
+	    }
 
-		/// <summary>
+	    /// <summary>
 		/// Flushes this output stream and forces any buffered output bytes
 		/// to be written out.
 		/// </summary>

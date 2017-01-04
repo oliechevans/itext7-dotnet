@@ -120,36 +120,37 @@ namespace iText.Kernel.XMP
 								fOut.WriteLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 							}
 							fOut.Flush();
-							Write(document.DocumentType);
+							// TODO netstandard Write(document.DocumentType);
 						}
 						Write(document.DocumentElement);
 						break;
 					}
 
 				case XmlNodeType.DocumentType: {
-						XmlDocumentType doctype = (XmlDocumentType)node;
-						fOut.Write("<!DOCTYPE ");
-						fOut.Write(doctype.Name);
-						String publicId = doctype.PublicId;
-						String systemId = doctype.SystemId;
-						if (publicId != null) {
-							fOut.Write(" PUBLIC '");
-							fOut.Write(publicId);
-							fOut.Write("' '");
-							fOut.Write(systemId);
-							fOut.Write('\'');
-						} else if (systemId != null) {
-							fOut.Write(" SYSTEM '");
-							fOut.Write(systemId);
-							fOut.Write('\'');
-						}
-						String internalSubset = doctype.InternalSubset;
-						if (internalSubset != null) {
-							fOut.WriteLine(" [");
-							fOut.Write(internalSubset);
-							fOut.Write(']');
-						}
-						fOut.WriteLine('>');
+                        // TODO netstandard
+      //                  XmlDocumentType doctype = (XmlDocumentType)node;
+						//fOut.Write("<!DOCTYPE ");
+						//fOut.Write(doctype.Name);
+						//String publicId = doctype.PublicId;
+						//String systemId = doctype.SystemId;
+						//if (publicId != null) {
+						//	fOut.Write(" PUBLIC '");
+						//	fOut.Write(publicId);
+						//	fOut.Write("' '");
+						//	fOut.Write(systemId);
+						//	fOut.Write('\'');
+						//} else if (systemId != null) {
+						//	fOut.Write(" SYSTEM '");
+						//	fOut.Write(systemId);
+						//	fOut.Write('\'');
+						//}
+						//String internalSubset = doctype.InternalSubset;
+						//if (internalSubset != null) {
+						//	fOut.WriteLine(" [");
+						//	fOut.Write(internalSubset);
+						//	fOut.Write(']');
+						//}
+						//fOut.WriteLine('>');
 						break;
 					}
 

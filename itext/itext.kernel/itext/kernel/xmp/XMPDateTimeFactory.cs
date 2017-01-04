@@ -138,7 +138,7 @@ namespace iText.Kernel.XMP
 		public static XMPDateTime SetLocalTimeZone(XMPDateTime dateTime)
 		{
 			XMPCalendar cal = dateTime.GetCalendar();
-			cal.SetTimeZone(TimeZone.CurrentTimeZone);
+			cal.SetTimeZone(TimeZoneInfo.Local);
 			return new XMPDateTimeImpl(cal);
 		}
 
