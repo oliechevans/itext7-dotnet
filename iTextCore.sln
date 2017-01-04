@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "itext.io.tests", "itext.tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "itext.kernel", "itext\itext.kernel\itext.kernel.csproj", "{76166842-A194-43B3-B5C0-4C78B845DABA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "itext.kernel.tests", "itext.tests\itext.kernel.tests\itext.kernel.tests.csproj", "{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{76166842-A194-43B3-B5C0-4C78B845DABA}.Release|x64.Build.0 = Release|x64
 		{76166842-A194-43B3-B5C0-4C78B845DABA}.Release|x86.ActiveCfg = Release|x86
 		{76166842-A194-43B3-B5C0-4C78B845DABA}.Release|x86.Build.0 = Release|x86
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Debug|x64.ActiveCfg = Debug|x64
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Debug|x64.Build.0 = Debug|x64
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Debug|x86.ActiveCfg = Debug|x86
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Debug|x86.Build.0 = Debug|x86
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Release|x64.ActiveCfg = Release|x64
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Release|x64.Build.0 = Release|x64
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Release|x86.ActiveCfg = Release|x86
+		{9EB233B4-5821-49DC-959E-F7BBA3D6DEB0}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

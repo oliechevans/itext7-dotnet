@@ -1114,7 +1114,6 @@ namespace iText.Kernel.Pdf {
         }
 
         /// <exception cref="System.IO.IOException"/>
-        [NUnit.Framework.Timeout(1000)]
         [NUnit.Framework.Test]
         public virtual void StreamLengthCorrection1() {
             lock (this) {
@@ -1133,7 +1132,6 @@ namespace iText.Kernel.Pdf {
         }
 
         /// <exception cref="System.IO.IOException"/>
-        [NUnit.Framework.Timeout(1000)]
         [NUnit.Framework.Test]
         public virtual void StreamLengthCorrection2() {
             lock (this) {
@@ -1149,7 +1147,6 @@ namespace iText.Kernel.Pdf {
         }
 
         /// <exception cref="System.IO.IOException"/>
-        [NUnit.Framework.Timeout(1000)]
         [NUnit.Framework.Test]
         public virtual void StreamLengthCorrection3() {
             lock (this) {
@@ -1165,7 +1162,6 @@ namespace iText.Kernel.Pdf {
         }
 
         /// <exception cref="System.IO.IOException"/>
-        [NUnit.Framework.Timeout(1000)]
         [NUnit.Framework.Test]
         public virtual void StreamLengthCorrection4() {
             lock (this) {
@@ -1181,7 +1177,6 @@ namespace iText.Kernel.Pdf {
         }
 
         /// <exception cref="System.IO.IOException"/>
-        [NUnit.Framework.Timeout(1000)]
         [NUnit.Framework.Test]
         public virtual void StreamLengthCorrection5() {
             lock (this) {
@@ -1197,7 +1192,6 @@ namespace iText.Kernel.Pdf {
         }
 
         /// <exception cref="System.IO.IOException"/>
-        [NUnit.Framework.Timeout(1000)]
         [NUnit.Framework.Test]
         public virtual void StreamLengthCorrection6() {
             lock (this) {
@@ -1213,7 +1207,6 @@ namespace iText.Kernel.Pdf {
         }
 
         /// <exception cref="System.IO.IOException"/>
-        [NUnit.Framework.Timeout(1000)]
         [NUnit.Framework.Test]
         public virtual void StreamLengthCorrection7() {
             lock (this) {
@@ -1229,7 +1222,6 @@ namespace iText.Kernel.Pdf {
         }
 
         /// <exception cref="System.IO.IOException"/>
-        [NUnit.Framework.Timeout(1000)]
         [NUnit.Framework.Test]
         public virtual void StreamLengthCorrection8() {
             lock (this) {
@@ -1245,7 +1237,6 @@ namespace iText.Kernel.Pdf {
         }
 
         /// <exception cref="System.IO.IOException"/>
-        [NUnit.Framework.Timeout(1000)]
         [NUnit.Framework.Test]
         public virtual void StreamLengthCorrection9() {
             lock (this) {
