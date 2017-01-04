@@ -60,7 +60,7 @@ namespace iText.IO.Util {
         protected TextReader inp;
 
         protected FilterReader(TextReader inp) {
-            this.inp = Synchronized(inp);
+            this.inp = inp;
         }
 
         /// <summary>
@@ -77,8 +77,10 @@ namespace iText.IO.Util {
             return inp.Read(cbuf, off, len);
         }
 
-        public override void Close() {
-            inp.Close();
+        protected override void Dispose(bool disposing) {
+            inp.Dispose();
+            base.Dispose(disposing);
         }
+        
     }
 }

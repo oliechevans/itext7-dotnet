@@ -92,14 +92,13 @@ namespace System.util.zlib {
 		public sealed override bool CanSeek { get { return false; } }
 		public sealed override bool CanWrite { get { return false; } }
 
-		public override void Close()
-		{
-			if (!closed)
-			{
-				closed = true;
-				input.Close();
-			}
-		}
+	    protected override void Dispose(bool disposing) {
+            if (!closed)
+            {
+                closed = true;
+                input.Dispose();
+            }
+        }
 
 		public sealed override void Flush() {}
 

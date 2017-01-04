@@ -169,17 +169,10 @@ namespace iText.IO.Util {
 		public virtual void Unread(char[] cbuf) {
 			Unread(cbuf, 0, cbuf.Length);
 		}
-
-		/// <summary>
-		/// Closes the stream and releases any system resources associated with
-		/// it. Once the stream has been closed, further read(),
-		/// unread(), ready(), or skip() invocations will throw an IOException.
-		/// Closing a previously closed stream has no effect.
-		/// </summary>
-		/// <exception cref="IOException">  If an I/O error occurs </exception>
-		public override void Close() {
-			base.Close();
-			_buf = null;
-		}
+        
+	    protected override void Dispose(bool disposing) {
+	        _buf = null;
+	        base.Dispose(disposing);
+	    }
 	}
 }

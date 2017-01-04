@@ -155,15 +155,13 @@ namespace iText.IO.Source {
 			outputStream.Flush();
 		}
 
-		/// <exception cref="System.IO.IOException"/>
-		public override void Close()
-		{
-			if (closeStream)
-			{
-				outputStream.Close();
-			}
-		}
-
+	    protected override void Dispose(bool disposing) {
+	        if (closeStream) {
+	            outputStream.Dispose();
+	        }
+	        base.Dispose(disposing);
+	    }
+        
 		public virtual T WriteLong(long value)
 		{
 			try

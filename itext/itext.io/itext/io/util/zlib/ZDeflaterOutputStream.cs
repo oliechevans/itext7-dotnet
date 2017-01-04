@@ -176,16 +176,19 @@ namespace System.util.zlib {
             z=null;
         }
         
-        public override void Close() {
-            try{
-                try{Finish();}
-                catch (IOException) {}
+        protected override void Dispose(bool disposing) {
+            try
+            {
+                try { Finish(); }
+                catch (IOException) { }
             }
-            finally{
+            finally
+            {
                 End();
-                outp.Close();
-                outp=null;
+                outp.Dispose();
+                outp = null;
             }
+            base.Dispose(disposing);
         }
     }
 }

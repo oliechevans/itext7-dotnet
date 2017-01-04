@@ -183,7 +183,11 @@ namespace iText.IO.Util {
         }
 
         public static String GetBaseDirectory() {
+#if !NETSTANDARD1_6
             return AppDomain.CurrentDomain.BaseDirectory;
+#else
+            return AppContext.BaseDirectory;
+#endif
         }
     }
 }

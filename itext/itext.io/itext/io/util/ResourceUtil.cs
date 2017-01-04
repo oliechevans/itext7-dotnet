@@ -47,6 +47,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+#if NETSTANDARD1_6
+using System.Runtime.Loader;
+#endif
 
 namespace iText.IO.Util {
     /// <summary>
@@ -119,6 +122,7 @@ namespace iText.IO.Util {
                 }
             }
 
+#if !NETSTANDARD1_6
             foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies()) {
                 if (assembly.GetName().Name.StartsWith("itext")) {
                     istr = SearchResourceInAssembly(key, assembly);
@@ -127,6 +131,7 @@ namespace iText.IO.Util {
                     }
                 }
             }
+#endif
 
             return istr;
         }
@@ -146,7 +151,11 @@ namespace iText.IO.Util {
                     string dir = (string)obj;
                     try
                     {
+#if !NETSTANDARD1_6
                         istr = Assembly.LoadFrom(dir).GetManifestResourceStream(key);
+#else
+                        istr = AssemblyLoadContext.Default.LoadFromAssemblyPath(key).GetManifestResourceStream(key);
+#endif
                     }
                     catch
                     {
@@ -176,6 +185,7 @@ namespace iText.IO.Util {
         }
 
         private static void LoadITextResourceAssemblies() {
+#if !NETSTANDARD1_6
             var loadedAssemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
             var loadedPaths = loadedAssemblies.Select(a => a.Location).ToArray();
             
@@ -185,6 +195,8 @@ namespace iText.IO.Util {
             {
                 try {
                     AssemblyName name = AssemblyName.GetAssemblyName(path);
+                    // Netstandard alternative
+                    //AssemblyName name = AssemblyLoadContext.GetAssemblyName(path);
                     if (iTextResourceAssemblyNames.Contains(name.Name) && !loadedAssemblies.Any(assembly => assembly.GetName().Name.Equals(name.Name))) {
                         loadedAssemblies.Add(AppDomain.CurrentDomain.Load(name));
                     }
@@ -193,6 +205,7 @@ namespace iText.IO.Util {
                 {
                 }
             }
+#endif
         }
     }
 }
